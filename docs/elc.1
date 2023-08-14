@@ -1,0 +1,35 @@
+.TH ELC 1 "August 2023" "ELC Manual"
+.SH NAME
+elc \- Edit Last Command Output
+.SH SYNOPSIS
+.B elc
+[\fIOPTIONS\fR]
+.SH DESCRIPTION
+\fBelc\fR is a shell script that captures and allows you to edit the output of the last executed command.
+.SH OPTIONS
+.TP
+\fB-h\fR, \fB--help\fR
+Display this help message and exit.
+.SH CONFIGURATION
+The behavior of \fBelc\fR can be configured using environment variables:
+.TP
+\fBLAST_COMMAND_OUTPUT\fR
+The path where the last command's output is saved. Default: \fI$TMPDIR/last_command_output.txt\fR.
+.TP
+\fBEDITOR_COMMAND\fR
+The command used to open the output for editing. Default: \fIfpp -a\fR.
+.TP
+\fBCOMMANDS_TO_WRAP\fR
+An array of commands to wrap and capture their output. Default: \fIfind fd grep rg\fR.
+.SH USAGE
+Run \fBelc\fR without any arguments to capture and edit the last executed command's output.
+.SH EXAMPLES
+Capture and edit the output of the last executed command:
+.TP
+\fBelc\fR
+.SH AUTHOR
+Bradly Feeley
+.SH REPORTING BUGS
+Report bugs at https://github.com/bradly/elc/issues
+.SH COPYRIGHT
+Copyright 2023 Bradly Feeley. Licensed under the MIT License.
